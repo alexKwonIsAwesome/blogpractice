@@ -1,10 +1,10 @@
-from django.shortcuts import rende
+from django.shortcuts import render
 
 
-def list(requets):
+def detail(request, post_id):
     return render(
             request,
-            "posts/list.html",
+            "posts/detail.html",
 
             {},
         )
