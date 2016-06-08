@@ -38,8 +38,9 @@ class Command(BaseCommand):
             thumbnail_image_url = thumbnail_image_element.get("src")
 
             NaverPost.objects.create(
-                title = title,
-                original_url = url,
+                keyword=query,
+                title=title,
+                original_url=url,
                 content = content,
                 thumbnail_image_url=thumbnail_image_url,
             )
