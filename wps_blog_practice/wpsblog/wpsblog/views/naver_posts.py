@@ -8,14 +8,9 @@ def naver_posts_list(requests):
     naver_posts = NaverPost.objects.all()
 
     if keyword:
-        naver_posts = [
-                naver_post
-                for naver_post
-                in naver_posts
-                if naver_post.keyword == keyword
-            ]
+        naver_posts = naver_posts.filter(keyword=keyword)
         
-    return render(
+        return render(
             request,
             "naver_posts/list.html",
             {
