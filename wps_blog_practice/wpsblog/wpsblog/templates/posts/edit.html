@@ -1,10 +1,9 @@
 {% extends "base.html" %}
 
-
 {% block content %}
 <h1>Edit Post</h1>
 
-<form action="/posts/{{ post.id }}/update/" method=POST>
+<form action="{% url "posts:update" post_id=post.id %}" method=POST>
   {% csrf_token %}
   <input type="text" name="title" value="{{ post.title }}" placeholder="title">
   <input type="text" name="content" value="{{ post.content }}" placeholder="contents">

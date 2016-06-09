@@ -5,7 +5,7 @@
 <h1>{{ post.title }}</h1>
 <p>{{ post.content }}</p>
 <ul>
-  <li><a href="/posts/{{ post.id }}/edit/">Edit</li>
-  <li><a href="/posts/{{ post.id }}/delete/">Delete</li>
+	<li><a href="{% url "posts:edit" post_id=post.id %}">Edit</li>
+	<li><a href="{% url "posts:delete" post_id=post.id %}">Delete</li>
 </ul>
 {% endblock %}
