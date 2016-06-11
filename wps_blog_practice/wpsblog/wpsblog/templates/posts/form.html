@@ -1,0 +1,7 @@
+<form action="{{ action }}" method=POST>
+  {% csrf_token %}
+  <input type="text" name="title" value="{% if post % }{{ post.title }}{% endif % }" placeholder="title">
+  <input type="text" name="content" value="{% if post % }{{ post.content }}{% endif % }" placeholder="contents">
+  <input type="submit" value="publish">
+</form>
+{

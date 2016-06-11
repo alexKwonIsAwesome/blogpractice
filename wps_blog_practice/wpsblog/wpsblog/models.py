@@ -17,6 +17,14 @@ class Post(models.Model):
                     "post_id": self.id,
                     }
                 )
+    
+    def get_update_url(self):
+        return reverse(
+                "posts:update",
+                kwargs={
+                    "post_id": self.id,
+                    }
+                )
 
 
 class NaverPost(models.Model):
