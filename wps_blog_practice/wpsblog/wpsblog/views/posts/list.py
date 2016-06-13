@@ -7,7 +7,7 @@ def list(request):
             request,
             "posts/list.html",
             {
-                "posts": Post.objects.public(),
+                "posts": Post.objects.filter(is_public=True),
             },
         )
 
