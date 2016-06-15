@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.core.urlresolvers import reverse
 
+
 class Bitlink(models.Model):
 
     user = models.ForeignKey(User)
@@ -26,6 +27,3 @@ class Bitlink(models.Model):
                 "shorten_hash": self.shorten_hash,
             }
         )
-
-
-
