@@ -15,4 +15,8 @@
     </li>
     {% endfor %}
 </ul>
+<ul>
+  <li><a href="/posts/?page={{ previous_page }}">이전 페이지</a> </li>
+  <li><a href="/posts/?page={{ next_page }}">다음 페이지</a></li>
+</ul>
 {% endblock %}
