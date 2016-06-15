@@ -6,7 +6,7 @@ class HomeView(View):
 
     def get(self, request, *args, **kwargs):
         return render(
-                requets,
+                request,
                 "home.html",
                 {"site_name": "wps blog"},
         )
