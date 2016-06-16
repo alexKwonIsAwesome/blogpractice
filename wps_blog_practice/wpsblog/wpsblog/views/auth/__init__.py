@@ -1,4 +1,4 @@
 from .login import LoginView
 from .logout import LogoutView
 from .signup import SignupView
-from .mypage import mypage
+from .mypage import MyPageView
