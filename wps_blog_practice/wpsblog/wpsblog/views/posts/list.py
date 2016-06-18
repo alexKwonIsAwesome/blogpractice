@@ -1,10 +1,8 @@
 from wpsblog.models import Post
 from django.views.generic.list import ListView
+from .base import PostBaseView
 
+class PostListView(PostBaseView,ListView):
 
-class PostListView(ListView):
-
-    model = Post
     template_name = "posts/list.html"
-    context_objects_name = "posts"
-
+    context_object_name = "posts"
