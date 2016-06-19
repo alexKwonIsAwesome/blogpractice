@@ -4,6 +4,7 @@ from bitly.views import *
 
 
 urlpatterns = [
-        url(r'/new/$', BitlinkCreateView.as_view(), name="create"),
+        url(r'(?P<shorten_hash>\W+)/$', BitlinkRedirectView.as_view(), name="redirect"),
+        url(r'new/$', BitlinkCreateView.as_view(), name="create"),
 ]
 

@@ -2,6 +2,9 @@
 
 {% block content %}
 <h1>Bitlink</h1>
-<form action="">
+<form action="{% url "bitly:create" %}">
+{% csrf_token %}
+<input type="url" placeholder="http://naver.com" name="original_url">
+<input type="submit" value="shorten">
 </form>
 {% endblock %}
