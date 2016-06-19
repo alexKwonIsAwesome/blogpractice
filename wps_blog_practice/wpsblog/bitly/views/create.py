@@ -2,7 +2,7 @@ from django.views.generic import View
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 
-from bitly.models import Bitlink
+from bitly.models.bitlink import Bitlink
 from hashids import Hashids
 
 class BitlinkCreateView(View):
@@ -19,10 +19,10 @@ class BitlinkCreateView(View):
         original_url = request.POST.get("original_url")
 
         bitlink = request.user.bitlink_set.create(
-                original_url = original_url,
+                original_url=original_url,
             )
 
-        hashids = Hashid(salt="awesome tzuyu", min_length=4) 
+        hashids = Hashids(salt="awesome tzuyu", min_length=4) 
         bitlink.shorten_hash = hashids.encode(bitlink.id)
 
         bitlink.save()
